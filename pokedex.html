@@ -1,0 +1,54 @@
+<div class="container">
+        <h1>Pokedex</h1>
+
+        <!-- Search -->
+        <div class="form-horizontal col-md-5" ng-controller="pokeForm">
+            <div class="form-group">
+                <p>
+                    <label for="pokeId" class="control-label col-md-5">N° Pokemon : </label>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" name="pokeId" id="pokeId" ng-model="pokeId" />
+                    </div>
+                </p>
+            </div>
+            <div class="form-group">
+                <p>
+                    <label for="pokeName" class="control-label col-md-5">Nom Pokémon : </label>
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" name="pokeName" id="pokeName" ng-model="pokeList" />
+                    </div>
+                </p>
+            </div>
+            <div class="form-group">
+                <p>
+                    <label for="pokeList" class="control-label col-md-5">Liste des Pokémons : </label>
+                    <div class="col-md-7">
+                        <select id="pokeList" class="form-control" ng-model="pokeList">
+                            <option ng-repeat="pokemon in pokemons | filter:pokeList">{{pokemon.name}}</option>
+                        </select>
+                    </div>
+                </p>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="searchId()">Recherche par numéro</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="searchName()">Recherche par nom</button>
+            </div>
+        </div>
+
+        <!-- Pokémon information -->
+        <div id="pokeInfo" class="col-md-7" ng-controller="pokeInfo">
+            <div class="col-md-7">
+            <p>N° Pokémon : {{pokeID}}</p>
+            <p>Nom du Pokémon : {{pokeName}}</p>
+            <p>Attaque du pokémon :
+                <ul id="pokeMoves" ng-model="pokeMoves">
+                    <li ng-repeat="move in moves">{{move.move.name}}</li>
+                </ul>
+            </p>
+            </div>
+            <div class="col-md-5">
+            <img src="{{spriteFront}}"/>
+            <img src="{{spriteBack}}"/>
+        </div>
+        </div>
+    </div>
