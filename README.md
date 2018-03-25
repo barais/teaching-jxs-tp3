@@ -1,2 +1,14 @@
-# teaching-jxs-tp5
-TP5 : AngularJS
+**********TP Pokemon**********
+
+  Groupe : Lylia Rabia & Amine Saker
+
+*****************************************************************************************************************************
+
+
+***Configuration***
+
+* Télécharger le dossier depuis github
+
+* Créer lancer le projet dans un IDE (Eclipse, IntelliJ, ...) 
+  
+*****************************************************************************************************************************
